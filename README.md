@@ -1,10 +1,10 @@
-#Uppgift 2
-##NodeJs och automatisering med Gulp
+# Uppgift 2
+## NodeJs och automatisering med Gulp
 
-###Syfte
+### Syfte
 Automatiseringsprocessens syfte är att förenkla för utvecklaren under projektets utveckling samt att minimera storleken och effektivisera projektet i sin helhet.
 
-###Paket
+### Paket
 Jag har valt att använda följande paket;
 * Gulp-concat
     * Detta för att konkatinera JS-filer och därmed sammanslå dessa till en fil.
@@ -17,7 +17,7 @@ Jag har valt att använda följande paket;
 * Browser-Sync
     * För att kunna liveuppdatera webbläsarfönstret utan att manuellt behöva klicka på uppdatera. Detta underlättar arbetet, speciellt vid arbete med fler skärmar.
 
-###System
+### System
 Jag har skapat ett enkelt men funktionellt system som kan användas till projekt innehållandes HTML, CSS, JavaScript och bilder.
 
 De 'tasks' som finns är följande;
