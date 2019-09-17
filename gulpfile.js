@@ -13,7 +13,7 @@ const files = {
     imagePath: "src/**/*.+(png|PNG|jpg|JPG|jpeg|JPEG|gif|GIF|svg|SVG)"
 }
 
-// Copy HTML
+// Task: Copy HTML
 function copyHTML() {
     // Find HTML path
     return src(files.htmlPath)
@@ -22,7 +22,7 @@ function copyHTML() {
     );
 }
 
-// Copy CSS
+// Task: Copy CSS
 function copyCSS() {
     // Find CSS path
     return src(files.cssPath)
@@ -37,7 +37,7 @@ function copyCSS() {
     );
 }
 
-// Copy JS
+// Task: Copy JS
 function copyJS() {
     // Find JS path
     return src(files.jsPath)
@@ -50,7 +50,7 @@ function copyJS() {
     );
 }
 
-// Copy images
+// Task: Copy images
 function copyImages() {
     // Find Images path
     return src(files.imagePath)
