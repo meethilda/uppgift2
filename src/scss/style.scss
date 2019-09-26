@@ -1,0 +1,155 @@
+@import "./variables";
+@import "./functions";
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $textStandard;
+}
+// Include @mixin with display flex
+body {
+  min-height: 100vh;
+}
+
+.wrapper {
+  @include flexOpt(row);
+  @media screen and (max-width: 500px) {
+    flex-flow: column;
+  }
+}
+
+// Paragraph
+p {
+  max-width: 550px;
+  font-family: "Roboto", arial, sans-serif;
+  color: $textMedium;
+  padding: 10px;
+  line-height: 1.4;
+}
+// Headlines
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: "Oswald";
+}
+
+// Import menu style
+@import "./menu-sidebar";
+
+// Colors on buttons
+.colorBtn {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  background: $btn;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  margin: 10px 5px;
+  font-family: "Oswald";
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+// Color when button's checked
+#radiobtnDef:checked ~ label[for="radiobtnDef"],
+#radiobtnLight:checked ~ label[for="radiobtnLight"],
+#radiobtnDark:checked ~ label[for="radiobtnDark"] {
+  background: $btnCheck;
+  box-shadow: none;
+}
+// Hidden radiobuttons
+.radiobtn {
+  display: none;
+}
+
+// Include @mixin with IF statement to choose colors on sections
+// Dark theme
+#radiobtnDark:checked {
+  @include theme(dark);
+}
+// Light theme
+#radiobtnLight:checked {
+  @include theme(light);
+}
+
+// Main style
+main {
+  background: #efefef;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  @media screen and (max-width: 800px) {
+    flex-flow: column;
+  }
+  .content {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    h1 {
+      padding: 0 10px;
+    }
+    section {
+      padding: 10px;
+      text-align: left;
+      &:nth-of-type(1) {
+        margin-top: 20px;
+      }
+      p {
+        padding: 0;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  // Image gallery in main area
+  .image-gallery {
+    background: $colorThree;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    @include flexOpt(column);
+    justify-content: center;
+    img {
+      width: 100%;
+      padding: 10px;
+    }
+    p {
+      color: $textDark;
+      &.imgOne::before {
+        content: "Image 1: ";
+        color: darken($textLight, 10%);
+      }
+      // Extend paragraph under image two, from image one
+      &.imgTwo::before {
+        @extend .imgOne;
+        content: "Image 2: ";
+      }
+    }
+    @media screen and (max-width: 800px) {
+      margin-left: 0;
+      margin-top: 20px;
+      max-width: none;
+    }
+  }
+}
+
+footer {
+  background: $colorOne;
+  text-align: center;
+  overflow: auto;
+  p {
+    max-width: none;
+    padding: 20px;
+    em {
+      color: lighten($textDark, 10%);
+    }
+  }
+}
