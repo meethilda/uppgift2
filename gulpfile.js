@@ -5,6 +5,7 @@ const cleanCss = require('gulp-clean-css');
 const concatCSS = require('gulp-concat-css');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const babel = require('gulp-babel');    
 
 // Files
 const files = {
@@ -57,6 +58,10 @@ function copySass() {
 function copyJS() {
     // Find JS path
     return src(files.jsPath)
+        // Convert with Babel
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         // Concat JS files to one
         .pipe(concat('main.js'))
         // Minify JS file
