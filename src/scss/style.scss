@@ -1,155 +1,92 @@
-@import "./variables";
-@import "./functions";
-@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap");
-
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  color: $textStandard;
+  font-family: Arial, Helvetica, sans-serif;
 }
-// Include @mixin with display flex
-body {
-  min-height: 100vh;
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .wrapper {
-  @include flexOpt(row);
-  @media screen and (max-width: 500px) {
-    flex-flow: column;
-  }
-}
-
-// Paragraph
-p {
-  max-width: 550px;
-  font-family: "Roboto", arial, sans-serif;
-  color: $textMedium;
-  padding: 10px;
-  line-height: 1.4;
-}
-// Headlines
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  font-family: "Oswald";
-}
-
-// Import menu style
-@import "./menu-sidebar";
-
-// Colors on buttons
-.colorBtn {
-  padding: 10px;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  background: $btn;
-  -webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
-  margin: 10px 5px;
-  font-family: "Oswald";
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-// Color when button's checked
-#radiobtnDef:checked ~ label[for="radiobtnDef"],
-#radiobtnLight:checked ~ label[for="radiobtnLight"],
-#radiobtnDark:checked ~ label[for="radiobtnDark"] {
-  background: $btnCheck;
-  box-shadow: none;
-}
-// Hidden radiobuttons
-.radiobtn {
-  display: none;
-}
-
-// Include @mixin with IF statement to choose colors on sections
-// Dark theme
-#radiobtnDark:checked {
-  @include theme(dark);
-}
-// Light theme
-#radiobtnLight:checked {
-  @include theme(light);
-}
-
-// Main style
-main {
-  background: #efefef;
+  max-width: 800px;
   width: 100%;
-  display: flex;
-  align-items: stretch;
-  position: relative;
-  @media screen and (max-width: 800px) {
-    flex-flow: column;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin: 20px 0;
+  th,
+  td {
+    padding: 10px;
   }
-  .content {
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-    h1 {
-      padding: 0 10px;
-    }
-    section {
-      padding: 10px;
-      text-align: left;
-      &:nth-of-type(1) {
-        margin-top: 20px;
-      }
-      p {
-        padding: 0;
-        padding-bottom: 10px;
-      }
+  thead {
+    text-align: left;
+    th {
+      border: none;
     }
   }
-  // Image gallery in main area
-  .image-gallery {
-    background: $colorThree;
-    max-width: 500px;
-    width: 100%;
-    margin-left: auto;
-    @include flexOpt(column);
-    justify-content: center;
-    img {
-      width: 100%;
-      padding: 10px;
+  tbody {
+    .nothing {
+      text-align: center !important;
     }
-    p {
-      color: $textDark;
-      &.imgOne::before {
-        content: "Image 1: ";
-        color: darken($textLight, 10%);
+    tr {
+      border-bottom: 1px solid #efefef;
+      td {
+        border: none;
+        &:last-of-type {
+          text-align: right;
+        }
+        em {
+          color: rgb(219, 219, 219);
+        }
+        .delete {
+          display: block;
+          background: darken(red, 10%);
+          color: #fff;
+          font-weight: bold;
+          padding: 5px;
+          text-align: center;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover {
+            background: darken(red, 20%);
+            text-decoration: none;
+          }
+        }
       }
-      // Extend paragraph under image two, from image one
-      &.imgTwo::before {
-        @extend .imgOne;
-        content: "Image 2: ";
-      }
-    }
-    @media screen and (max-width: 800px) {
-      margin-left: 0;
-      margin-top: 20px;
-      max-width: none;
     }
   }
 }
 
-footer {
-  background: $colorOne;
+.form {
   text-align: center;
-  overflow: auto;
-  p {
-    max-width: none;
-    padding: 20px;
-    em {
-      color: lighten($textDark, 10%);
-    }
+  > * {
+    border-radius: 5px;
+  }
+  input[type="text"] {
+    width: 49%;
+    display: inline-block;
+    padding: 10px;
+    font-size: 0.8em;
+    margin: 3px 0;
+    border: 1px solid #efefef;
+  }
+  input[type="url"] {
+    @extend input[type="text"];
+  }
+  input[type="submit"] {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 0.8em;
   }
 }

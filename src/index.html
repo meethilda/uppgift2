@@ -12,80 +12,34 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar">
-            <input type="checkbox" id="check">
-            <label for="check">
-                <span></span>
-                <span>Menu</span>
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="">Link 1</a></li>
-                    <li><a href="">Link 2</a></li>
-                    <li><a href="">Link 3</a></li>
-                    <li><a href="">Link 4</a></li>
-                    <li><a href="">Link 5</a></li>
-                </ul>
-            </nav>
+        <h1>Moment 5</h1>
+        <h2>Pågående/avslutade kurser:</h2>
+        <table id="course" border="1">
+            <thead>
+                <tr>
+                    <th>Kurskod:</th>
+                    <th>Kursnamn:</th>
+                    <th>Progression:</th>
+                    <th>Kursplan:</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="course-items">
+
+            </tbody>
+        </table>
+
+        <div class="form">
+            <input type="text" name="courseCode" id="courseCode" placeholder="Kurskod *">
+            <input type="text" name="courseName" id="courseName" placeholder="Kursnamn *">
+            <input type="text" name="courseProg" id="courseProg" placeholder="Progression *">
+            <input type="url" name="coursePlan" id="coursePlan" placeholder="Kursplan (url)">
+            <input type="submit" value="Lägg till kurs" id="mysubmit">
         </div>
-        <main>
-            <div class="content">
-                <h1>Choose your favorite section layout</h1>
-                <input type="radio" id="radiobtnDef" name="colorChange" value="default" class="radiobtn" checked>
-                <label for="radiobtnDef" class="colorBtn">Default</label>
-                <input type="radio" id="radiobtnLight" name="colorChange" value="light" class="radiobtn">
-                <label for="radiobtnLight" class="colorBtn">Light</label>
-                <input type="radio" id="radiobtnDark" name="colorChange" value="dark" class="radiobtn">
-                <label for="radiobtnDark" class="colorBtn">Dark</label>
-                <section>
-                    <h2>Section 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur iaculis ante at commodo.
-                        Fusce
-                        sed lacus eget enim sollicitudin finibus. Ut sit amet nulla ex. Nunc vitae libero eget ante
-                        feugiat
-                        aliquam a vitae massa. Nunc rhoncus, sem dictum accumsan malesuada, augue tellus gravida nisl,
-                        nec
-                        egestas enim leo ac dui. Suspendisse consequat massa nec aliquet aliquam. Duis id libero ut quam
-                        tincidunt gravida. In quis mollis nunc. Maecenas ultrices sapien tellus, vitae efficitur orci
-                        ultrices quis. </p>
-                </section>
-                <section>
-                    <h2>Section 2</h2>
-                    <p>In elementum augue in dictum sodales. Curabitur pretium ipsum metus, et fringilla justo viverra
-                        blandit. Sed et nisl a sapien lobortis ullamcorper id et nisi. Donec eleifend nisi et mauris
-                        sagittis rhoncus. Duis eu ante dui. Quisque auctor orci at faucibus tempor. Nulla consequat
-                        lectus a
-                        nulla imperdiet sagittis. Suspendisse fringilla auctor malesuada. </p>
-                    <p>Fusce pretium sapien ac commodo ultricies. Curabitur eget lacus id mi scelerisque pretium. Duis
-                        sagittis nec nunc in consequat. Morbi quis leo blandit, maximus dolor et, accumsan ante. Duis
-                        non
-                        magna justo. Vivamus non imperdiet augue. Fusce varius lorem at metus tempor, vel tempus nisi
-                        elementum. </p>
-                </section>
-                <section>
-                    <h2>Section 3</h2>
-                    <p> Etiam auctor in nisi sit amet fringilla. Sed dictum eros nisl, in varius felis semper eu.
-                        Pellentesque gravida elementum augue, at commodo tortor suscipit a. Maecenas congue nulla quis
-                        sem
-                        euismod sodales. Praesent in ornare nisi. Integer lobortis libero in nisl bibendum elementum.
-                        Nulla
-                        at libero nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                        himenaeos. Donec in libero diam. </p>
-                </section>
-            </div>
-            <div class="image-gallery">
-                <img src="images/image1.jpg" alt="">
-                <p class="imgOne">Image</p>
-                <img src="images/image2.jpg" alt="">
-                <p class="imgTwo">Pic</p>
-            </div>
-        </main>
     </div>
-    <footer>
-        <p>Mathilda Edström - Webbutveckling HT18<br/>
-            <em>Webbutveckling III, HT19</em></p>
-    </footer>
+
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
